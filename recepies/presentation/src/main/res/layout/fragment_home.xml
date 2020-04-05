@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5F5F5">
+
+    <ImageView
+        android:id="@+id/vHomeLogo"
+        android:layout_width="@dimen/home_logo_width"
+        android:layout_height="@dimen/home_logo_height"
+        android:layout_marginStart="@dimen/extra_large_margin"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="@dimen/extra_large_margin"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/sym_def_app_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/vRecipeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/extra_large_margin"
+        android:layout_marginEnd="@dimen/extra_large_margin"
+        android:padding="@dimen/small_margin"
+        android:hint="@string/search_edit_text_hint"
+        android:textAlignment="center"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@+id/vSearchRecipeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/vSearchRecipeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:text="@string/home_search_btn_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vRecipeEditText" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/regular_medium_margin"
+        android:layout_marginBottom="@dimen/regular_medium_margin"
+        android:layout_weight="1"
+        android:text="@string/home_main_message"
+        app:layout_constraintBottom_toTopOf="@+id/vRecipeEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vHomeLogo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
