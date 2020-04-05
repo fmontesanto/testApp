@@ -44,7 +44,7 @@ class MealsAdapter(
         Glide
             .with(context)
             .load(imageUrl)
-            .centerCrop()
+            .fitCenter()
             .into(imageView)
     }
 

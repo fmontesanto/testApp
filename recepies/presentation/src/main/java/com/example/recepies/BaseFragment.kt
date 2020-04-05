@@ -18,8 +18,4 @@ abstract class BaseFragment : Fragment() {
     ): View? {
         return inflater.inflate(getLayoutResourceId(), container, false)
     }
-
-    fun displayMessage(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
-    }
 }

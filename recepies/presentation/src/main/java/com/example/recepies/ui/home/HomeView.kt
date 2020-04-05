@@ -9,4 +9,6 @@ interface HomeView {
     fun updateMeals(meals: List<MealModel>)
 
     fun toggleProgress(toggle: Boolean)
+
+    fun displayMessage (message : String)
 }

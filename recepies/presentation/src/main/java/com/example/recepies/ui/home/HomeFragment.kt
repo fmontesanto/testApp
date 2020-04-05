@@ -3,7 +3,9 @@ package com.example.recepies.ui.home
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.models.MealModel
@@ -43,29 +45,31 @@ class HomeFragment : BaseFragment(), HomeView {
     }
 
     private fun setUpListeners() {
-        vRecipeEditText.addTextChangedListener {
-            object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun beforeTextChanged(
-                    s: CharSequence?,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    TODO("Not yet implemented")
+        vRecipeEditText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(text: Editable?) {
+                if (!text.isNullOrEmpty() && text.length > 3) {
+                    presenter.onEditTextChange(text.toString())
                 }
             }
-        }
+
+            override fun beforeTextChanged(
+                s: CharSequence?,
+                start: Int,
+                count: Int,
+                after: Int
+            ) {}
+
+            override fun onTextChanged(text: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
     }
 
     override fun toggleProgress(toggle: Boolean) {
         (activity as HomeActivity).toggleProgress(toggle)
+    }
+
+    override fun displayMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
     }
 }
