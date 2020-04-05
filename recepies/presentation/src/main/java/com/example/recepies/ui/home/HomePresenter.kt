@@ -9,16 +9,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HomePresenter(
-    private val view: HomeView,
+    private val view: HomeView?,
     private val searchRecipes: SearchRecipes
 ) {
 
     fun onInit() {
-        view.setUpLayout(emptyList())
+        view?.setUpLayout(emptyList())
     }
 
     fun onEditTextChange(searchText: String) {
-        view.toggleProgress(true)
+        view?.toggleProgress(true)
         CoroutineScope(Dispatchers.IO).launch {
             val searchResult = searchRecipes(searchText)
             withContext(Dispatchers.Main) {
@@ -28,10 +28,10 @@ class HomePresenter(
     }
 
     private fun handleUseCaseResult(result: UseCaseResult<List<MealModel>>) {
-        view.toggleProgress(false)
+        view?.toggleProgress(false)
         when (result) {
-            is UseCaseResult.Success -> { view.updateMeals(result.data) }
-            is UseCaseResult.Error -> view.displayMessage(ERROR_MESSAGE)
+            is UseCaseResult.Success -> { view?.updateMeals(result.data) }
+            is UseCaseResult.Error -> view?.displayMessage(ERROR_MESSAGE)
         }
     }
 
