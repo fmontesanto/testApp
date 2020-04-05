@@ -78,13 +78,13 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorAccent"
-                app:layout_constraintBottom_toTopOf="@+id/vRecipesList"
+                app:layout_constraintBottom_toTopOf="@+id/rvRecipesList"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/vSearchRecipeButton" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/vRecipesList"
+                android:id="@+id/rvRecipesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
