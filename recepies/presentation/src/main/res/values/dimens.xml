@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="very_small_margin">5dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="small_medium_margin">15dp</dimen>
+    <dimen name="regular_margin">20dp</dimen>
+    <dimen name="regular_medium_margin">25dp</dimen>
+    <dimen name="large_margin">30dp</dimen>
+    <dimen name="extra_large_margin">40dp</dimen>
+    <dimen name="very_large_margin">35dp</dimen>
+    <dimen name="progress_bar_height">100dp</dimen>
+    <dimen name="home_logo_width">50dp</dimen>
+    <dimen name="home_logo_height">50dp</dimen>
+    <dimen name="meal_thumbnail_height">100dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFF5F5F5">
+
+            <ImageView
+                android:id="@+id/vHomeLogo"
+                android:layout_width="@dimen/home_logo_width"
+                android:layout_height="@dimen/home_logo_height"
+                android:layout_marginStart="@dimen/extra_large_margin"
+                android:layout_marginTop="@dimen/extra_large_margin"
+                android:layout_marginEnd="@dimen/extra_large_margin"
+                android:src="@drawable/bg_uala"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/vRecipeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/extra_large_margin"
+                android:layout_marginEnd="@dimen/extra_large_margin"
+                android:gravity="center_horizontal"
+                android:hint="@string/search_edit_text_hint"
+                android:padding="@dimen/small_margin"
+                android:textAlignment="center"
+                android:textCursorDrawable="@null"
+                app:layout_constraintBottom_toTopOf="@+id/vDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_medium_margin"
+                android:layout_marginBottom="@dimen/regular_medium_margin"
+                android:layout_weight="1"
+                android:text="@string/home_main_message"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/vRecipeEditText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vHomeLogo" />
+
+            <View
+                android:id="@+id/vDivider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginBottom="@dimen/very_small_margin"
+                android:background="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@+id/rvRecipesList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vRecipeEditText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecipesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vDivider"
+                tools:listitem="@layout/viewholder_recipe_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
