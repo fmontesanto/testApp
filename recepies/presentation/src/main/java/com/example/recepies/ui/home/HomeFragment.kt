@@ -10,17 +10,18 @@ import com.example.domain.models.MealModel
 import com.example.recepies.BaseFragment
 import com.example.recepies.R
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.koin.android.scope.currentScope
+import org.koin.core.parameter.parametersOf
 
 class HomeFragment : BaseFragment(), HomeView {
 
     private lateinit var mealsAdapter: MealsAdapter
-    private lateinit var presenter: HomePresenter
+    private val presenter: HomePresenter by currentScope.inject { parametersOf(this) }
 
     override fun getLayoutResourceId(): Int = R.layout.fragment_home
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter = HomePresenter(this)
         presenter.onInit()
     }
 
